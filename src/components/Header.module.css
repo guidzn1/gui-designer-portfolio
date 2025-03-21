@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --header-bg: rgba(0, 0, 0, 0.4);
+  --border-color: rgba(255, 255, 255, 0.3);
+  --font: 'Roboto', sans-serif;
+}
+
+.header {
+  position: fixed;
+  top: 1rem;
+
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  background: var(--header-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  font-family: var(--font);
+}
+
+.headerContainer {
+  display: flex;
+  
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+}
+
+.navDesktop {
+  display: none;
+}
+
+.navDesktop a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.navDesktop a:hover {
+  color: #0e67e2;
+}
+
+.navMobileIcon {
+  display: block;
+  cursor: pointer;
+}
+
+.navMobileIcon img {
+  height: 24px;
+}
+
+@media (min-width: 768px) {
+  .navDesktop {
+    display: flex;
+  }
+  .navMobileIcon {
+    display: none;
+  }
+}
+
+/* Mobile Drawer */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 90;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 260px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.navMobile {
+  display: flex;
+  flex-direction: column;
+}
+
+.navMobile a {
+  text-decoration: none;
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.navMobile a:hover {
+  color: #0e67e2;
+}

@@ -1,0 +1,215 @@
+/* Base do Hero (referência) */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Alinha à esquerda */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* Retângulo com efeito glass (desfoque) */
+.hero-blur-box {
+  position: relative;
+  width: 500px;
+  margin: 0 0 0 300px; 
+  background: rgba(63, 63, 63, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+}
+
+/* Conteúdo interno do retângulo */
+.hero-content {
+  width: 550px;
+  margin-left: 30px;
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: left;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+/* Efeito degradê animado aplicado apenas no nome */
+.hero-name {
+  background: linear-gradient(90deg, #0e67e2, #b3d3ff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientText 3s linear infinite;
+}
+
+@keyframes gradientText {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Botão CTA */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px; /* Ajuste menor */
+  background: linear-gradient(90deg, #0e67e2, #b3d3ff);
+  background-size: 200% 200%;
+  border: none;
+  color: #070707;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.5s, transform 0.3s ease;
+  font-size: 0.9rem; /* um pouco menor */
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.cta:focus {
+  outline: none;
+}
+
+.cta:hover {
+  box-shadow: 5px 5px 0 #ffffff;
+}
+
+/* Texto e ícone */
+.cta span:nth-child(2) {
+  margin-left: 15px; /* Reduz espaço entre texto e ícone */
+  margin-right: 0;
+  transition: margin-right 0.5s;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Ao hover, desloca a seta */
+.cta:hover span:nth-child(2) {
+  margin-right: 30px; /* menos deslocamento */
+}
+
+/* Removido o skew */
+.cta span {
+  transform: none;
+}
+
+/* Ajuste o tamanho da seta */
+.cta span:nth-child(2) img {
+  width: 24px;  /* ou 20px */
+  height: 24px;
+}
+/* Botão com degradê animado (caso seja outro botão, hero-button) */
+.hero-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: linear-gradient(90deg, #0e67e2, #b3d3ff);
+  background-size: 200% 200%;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  animation: gradientButton 3s ease-in-out infinite;
+}
+
+@keyframes gradientButton {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero-button:hover {
+  animation: none; 
+  transform: scale(1.1);
+}
+
+/* Ícone giratório (selo-icon) no canto do retângulo */
+.selo-icon {
+  position: absolute;
+  top: -80px;
+  right: -60px;
+  width: 170px;
+  height: 170px;
+  animation: rotateIcon 15s linear infinite;
+}
+
+@keyframes rotateIcon {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* ----------------------- */
+/* Ajustes para Mobile     */
+/* ----------------------- */
+@media (max-width: 760px) {
+  /* Hero continua usando a imagem mobile via inline style no componente */
+  .hero {
+    background-position: right center;
+    justify-content: flex-start; /* Mantém alinhamento geral à esquerda se quiser */
+  }
+
+  /* Retângulo (hero-blur-box) reduzido, abaixado e mais centrado */
+  .hero-blur-box {
+    width: 90%;
+    margin: 300px 5% 0; /* 40px de margem superior, 5% laterais, 0 inferior */
+    padding-top: 10px;
+  }
+
+  /* Conteúdo interno: centralizado horizontalmente */
+  .hero-content {
+    width: 100%;
+    margin-left: 0;         /* Remove margin-left */
+    padding: 0;
+    display: flex;          /* Usa flex para alinhar */
+    flex-direction: column; /* Empilha título, parágrafo, botão */
+    align-items: center;    /* Centraliza horizontalmente */
+    text-align: center;     /* Texto central */
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  /* Botão CTA (pode ajustar se quiser menor) */
+  .cta {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}

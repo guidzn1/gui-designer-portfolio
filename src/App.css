@@ -36,3 +36,110 @@
     transform: rotate(360deg);
   }
 }
+/* Botão CTA principal */
+.cta.animated-border {
+  position: relative; /* importante para posicionar as bordas */
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px; 
+  background: linear-gradient(90deg, #0e67e2, #b3d3ff);
+  background-size: 200% 200%;
+  border: none;
+  color: #050505;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 8px;
+  overflow: hidden; /* se quiser que nada “vaze” */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Ajuste para remover outline */
+.cta.animated-border:focus {
+  outline: none;
+}
+
+/* Hover do botão principal (opcional) */
+.cta.animated-border:hover {
+  box-shadow: 5px 5px 0 #ffffff;
+  transform: scale(1.05);
+}
+
+/* Espaçamento entre texto e ícone */
+.cta.animated-border span:nth-child(2) {
+  margin-left: 15px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Ao hover, se quiser mover a seta */
+.cta.animated-border:hover span:nth-child(2) {
+  /* ex.: margin-right: 20px; */
+}
+
+/* Ajustar tamanho do ícone da seta */
+.cta.animated-border span:nth-child(2) img {
+  width: 24px;
+  height: 24px;
+}
+
+/* ---------- Animação de Borda ---------- */
+
+/* Classe geral para todos os 4 spans de borda */
+.border-span {
+  position: absolute;
+  background: linear-gradient(to left, rgba(8, 20, 43, 0), #2662d9);
+  /* cor e gradiente de exemplo, troque como quiser */
+}
+
+/* TOP: border-span1 */
+.border-span1 {
+  top: 0; left: 0;
+  width: 100%; 
+  height: 2px;
+  animation: animateTop 2s linear infinite;
+}
+@keyframes animateTop {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* RIGHT: border-span2 */
+.border-span2 {
+  top: 0; right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to top, rgba(8, 20, 43, 0), #ffffff);
+  animation: animateRight 2s linear -1s infinite;
+}
+@keyframes animateRight {
+  0%   { transform: translateY(100%); }
+  100% { transform: translateY(-100%); }
+}
+
+/* BOTTOM: border-span3 */
+.border-span3 {
+  bottom: 0; left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, rgba(8, 20, 43, 0), #ffffff);
+  animation: animateBottom 2s linear infinite;
+}
+@keyframes animateBottom {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* LEFT: border-span4 */
+.border-span4 {
+  top: 0; left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(8, 20, 43, 0), #ffffff);
+  animation: animateLeft 2s linear -1s infinite;
+}
+@keyframes animateLeft {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}

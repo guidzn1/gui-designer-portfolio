@@ -1,0 +1,78 @@
+.stats-section {
+    position: relative;
+    width: 100%;
+    min-height: 5vh; /* ajuste conforme necessário */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Degradê animado */
+    background: linear-gradient(90deg, #0e67e2, #b3d3ff);
+    background-size: 200% 200%;
+    animation: gradientBG 6s ease-in-out infinite;
+  }
+  
+  /* Animação do degradê */
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Se quiser um overlay (opcional) */
+  .stats-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Conteúdo principal */
+  .stats-content {
+    position: relative;
+    z-index: 1; /* acima do overlay */
+    display: flex;
+    gap: 4rem; /* espaço entre itens */
+    text-align: center;
+  }
+  
+  /* Cada bloco de stat */
+  .stat-item {
+    color: #000; /* ou #fff, dependendo do contraste */
+    font-family: sans-serif;
+  }
+  
+  /* Estilo dos números */
+  .stat-item h2 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Ajuste do texto de descrição */
+  .stat-item p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  /* Responsividade (exemplo) */
+  @media (max-width: 768px) {
+    .stats-content {
+      flex-direction: column; /* empilha os itens */
+      gap: 0.1rem;
+    }
+  
+    .stat-item h2 {
+      font-size: 2rem;
+    }
+  }
+  
