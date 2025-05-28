@@ -169,7 +169,8 @@
 /***** RESPONSIVIDADE *****/
 @media (max-width: 768px) {
   .skill-card {
-    width: 150px;
+    width: 250px;
+    ;
   }
   .skill-title {
     font-size: 1rem;
