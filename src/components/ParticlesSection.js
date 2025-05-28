@@ -28,10 +28,9 @@ const skillsData = [
 function ParticlesSection() {
   const [showCards, setShowCards] = useState(false);
 
-  // useInView para disparar a animação quando a seção ficar visível
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.5,
+    threshold: 0.1,
   });
 
   useEffect(() => {
@@ -40,7 +39,6 @@ function ParticlesSection() {
     }
   }, [inView, showCards]);
 
-  // Carrega o particles.js se estiver disponível (script no index.html)
   useEffect(() => {
     if (window.particlesJS) {
       window.particlesJS.load("particles-js", "/particles.json", () => {
@@ -51,31 +49,39 @@ function ParticlesSection() {
 
   return (
     <section className="particles-section">
-      {/* Container para as partículas */}
       <div id="particles-js"></div>
 
-      {/* Conteúdo principal da seção */}
       <div className="skills-wrapper">
-        <h2 className= "titulo-degrade">MINHAS HABILIDADES:</h2>
-        <div className="skills-container" ref={ref}>
-          {skillsData.map((skill, index) => (
+        <h2 className="titulo-degrade" ref={ref}>MINHAS HABILIDADES:</h2>
+        <div className="skills-container">
+          {skillsData.map((skill) => (
             <div
               key={skill.title}
               className={`skill-card ${showCards ? "visible" : "hidden"}`}
-             
             >
               <div className="icon-wrapper">
-                <img
-                  src={skill.icon}
-                  alt={skill.title}
-                  className="skill-icon"
-                />
+                <img src={skill.icon} alt={skill.title} className="skill-icon" />
               </div>
               <h3 className="skill-title">{skill.title}</h3>
               <p>{skill.desc}</p>
             </div>
           ))}
         </div>
+
+<button
+  className="cta animated-border cta-skills"
+  onClick={() => window.open("https://wa.link/1hvt54", "_blank")}
+>
+  <span>QUERO UM ORÇAMENTO!</span>
+  <span>
+    <img src="/seta-icone.png" alt="Seta" />
+  </span>
+  <span className="border-span border-span1"></span>
+  <span className="border-span border-span2"></span>
+  <span className="border-span border-span3"></span>
+  <span className="border-span border-span4"></span>
+</button>
+
       </div>
     </section>
   );

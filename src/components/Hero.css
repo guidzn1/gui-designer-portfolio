@@ -93,22 +93,10 @@
 }
 
 .cta:hover {
-  box-shadow: 5px 5px 0 #ffffff;
+  box-shadow: 5px 5px 0 #09caf1;
 }
 
-/* Texto e ícone */
-.cta span:nth-child(2) {
-  margin-left: 15px; /* Reduz espaço entre texto e ícone */
-  margin-right: 0;
-  transition: margin-right 0.5s;
-  display: inline-flex;
-  align-items: center;
-}
 
-/* Ao hover, desloca a seta */
-.cta:hover span:nth-child(2) {
-  margin-right: 30px; /* menos deslocamento */
-}
 
 /* Removido o skew */
 .cta span {

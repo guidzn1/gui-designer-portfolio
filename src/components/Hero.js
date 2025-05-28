@@ -44,20 +44,19 @@ function Hero() {
             Designer Gráfico, Motion Designer, VideoMaker e Desenvolvedor Web &amp; Mobile.
             Transformo ideias em experiências visuais incríveis.
           </p>
-
-          <button className="cta animated-border">
-            {/* Texto do botão */}
-            <span>QUERO UM ORÇAMENTO!</span>
-            {/* Ícone da seta */}
-            <span>
-              <img src="/seta-icone.png" alt="Seta" />
-            </span>
-            {/* 4 spans para as bordas animadas */}
-            <span className="border-span border-span1"></span>
-            <span className="border-span border-span2"></span>
-            <span className="border-span border-span3"></span>
-            <span className="border-span border-span4"></span>
-          </button>
+<button
+  className="cta animated-border cta-skills"
+  onClick={() => window.open("https://wa.link/1hvt54", "_blank")}
+>
+  <span>QUERO UM ORÇAMENTO!</span>
+  <span>
+    <img src="/seta-icone.png" alt="Seta" />
+  </span>
+  <span className="border-span border-span1"></span>
+  <span className="border-span border-span2"></span>
+  <span className="border-span border-span3"></span>
+  <span className="border-span border-span4"></span>
+</button>
         </div>
       </div>
     </section>

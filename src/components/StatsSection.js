@@ -30,7 +30,7 @@ function StatsSection() {
 
         <div className="stat-item">
           <h2>
-          {animated ? <CountUp end={150} duration={2} prefix="+" /> : "+0"}
+          {animated ? <CountUp end={250} duration={2} prefix="+" /> : "+0"}
           </h2>
           <p>CLIENTES ATENDIDOS</p>
         </div>
