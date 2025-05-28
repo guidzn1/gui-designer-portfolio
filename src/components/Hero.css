@@ -1,5 +1,14 @@
+/* REMOVE qualquer overflow lateral */
+html, body {
+  overflow-x: hidden;
+}
+
 /* Base do Hero (referência) */
-.hero {
+.hero {* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
   position: relative;
   width: 100%;
   min-height: 100vh;
